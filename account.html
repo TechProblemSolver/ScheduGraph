@@ -29,14 +29,14 @@
 
         if (!user) {
             alert("User not found! Redirecting to login.");
-            window.location.replace('project.html');
+            window.location.replace('index.html');
         } else {
             document.getElementById('usernameDisplay').innerText = user.username;
         }
 
         function logout() {
             localStorage.removeItem('currentUser');
-            window.location.replace('project.html');
+            window.location.replace('index.html');
         }
     </script>
 </body>
