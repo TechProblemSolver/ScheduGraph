@@ -1,59 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="1.jpg" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
-        <title>ScheduGraph</title>
-    </head>
-    <body draggable="false">
-        <header id="header">
-            <p><img src="1.jpg" width="50" height="50"></p>
-            <p>Home</p>
-            <p>Create Account</p>
-        </header>
-        <!-- <marquee>⚠️ You are not allowed to copy or save images from this site. Doing so will delete your account if you've made one. Don't click the images.</marquee> -->
-        <div id="page" draggable="false">
-            <div id="help-bar">
-                <h1><i>📊 Let's get started.</i></h1>
-                <p><code>Get organized today with ScheduGraph.</code></p>
-                <code>Keep your things safe today with ScheduGraph 🔒.</code>
-                <br>
-                <br>
-                <button class="create-account" onclick="createAccount()">+ Create Account</button>
-                <br>
-                <br>
-                <p>* This will ask for details like name and gender. Please fill in all details with an asterisk (*).</p>
-                <p>Remember: We will not store finished items. We will ask you before we remove it, as shown here.</p>
-                <a href=""><img src="Screenshot 2024-10-19 182245.png" draggable="false" aria-disabled="true"  title="Adobe Acrobat: Don't save images from this site! They could be dangerous."></a>
-                <center>
-                    <div id="accountForm"></div>
-                </center>
-            </div>
-            <div id="get-started-notes">
-                <h1>Documentation</h1>
-                <h2 id="how-to-get-started">How to get started.</h2>
-                <p>ScheduGraph is where you can save your stuff, links and other things you need to do.<br> You can come back to it to check your things, finish it and mark them off the list.<br> You can also save notes, and other pages you need to go to later on.</p>
-                <ol>
-                    <li id="step1">
-                        <p>Go to the left hand-bar.</p>
-                        <a href=""><img src="Screenshot 2024-10-20 143217.png" width="500" height="350" draggable="false" aria-disabled="true" title="Adobe Acrobat: Don't save images from this site! They could be dangerous."></a>
-                    </li>
-                    <li id="step2">
-                        <p>And fill in the blank!</p>
-                    </li>
-                </ol>
-            </div>
-            <div id="note-sections">
-                <a href="#how-to-get-started"><h3>1. How to get started</h3></a>
-                <a href="#step1"><h4>1.1. Step 1</h4></a>
-                <a href="#step2"><h4>1.2. Step 2</h4></a>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="1.jpg" type="image/x-icon">
+    <title>ScheduGraph</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <p><img src="1.jpg" width="50" height="50"></p>
+        <p>Home</p>
+        <p>Create Account</p>
+    </header>
+
+    <div id="page">
+        <div id="help-bar">
+            <h1><i>📊 Let's get started.</i></h1>
+            <p><code>Get organized today with ScheduGraph.</code></p>
+            <button class="create-account" onclick="createAccount()">+ Create Account</button>
+
+            <div id="accountForm" style="text-align: center;"></div>
         </div>
-        <footer>
-            <span>&copy; ScheduGraph. All rights reserved. &reg;</span>
-        </footer>
-        <script src="script.js"></script>
-    </body>
+
+        <div id="get-started-notes">
+            <h1>Documentation</h1>
+            <h2 id="how-to-get-started">How to get started.</h2>
+            <p>ScheduGraph helps you save and organize notes, links, and tasks.</p>
+            <ol>
+                <li id="step1">Go to the left-hand bar.</li>
+                <li id="step2">Fill in your details and start saving.</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer>
+        <span>&copy; ScheduGraph. All rights reserved.</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
