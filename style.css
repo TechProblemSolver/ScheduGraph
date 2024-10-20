@@ -1,4 +1,4 @@
-/* General Reset and Styling */
+        /* General Reset and Styling */
         * {
             margin: 0;
             padding: 0;
@@ -37,7 +37,7 @@
         }
 
         /* Button Styling */
-        .create-account {
+        .create-account, .login-button {
             background-color: #ff6b6b;
             color: white;
             border: none;
@@ -48,13 +48,13 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .create-account:hover {
+        .create-account:hover, .login-button:hover {
             background-color: #ff4757;
             transform: scale(1.05);
         }
 
         /* Form Styles */
-        #accountForm {
+        #accountForm, #loginForm {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
@@ -64,7 +64,7 @@
             max-width: 500px;
         }
 
-        #accountForm p {
+        #accountForm p, #loginForm p {
             margin: 10px 0;
             font-weight: 500;
         }
@@ -82,10 +82,6 @@
         input:focus {
             border-color: #4CAF50;
             outline: none;
-        }
-
-        input[type="radio"] {
-            margin-right: 8px;
         }
 
         /* Page Layout */
