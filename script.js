@@ -28,26 +28,27 @@
         }
 
         function registerAccount() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const gender = document.querySelector('input[name="gender"]:checked')?.value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
 
-            if (!username || !password || !gender) {
-                alert("Please fill all required fields.");
-                return;
-            }
+    if (!username || !password || !gender) {
+        alert("Please fill all required fields.");
+        return;
+    }
 
-            // Retrieve users from localStorage
-            let users = JSON.parse(localStorage.getItem('users'));
-            console.log(users)
-            if (users.some(user => user.username === username)) {
-                alert("Username already exists! Please choose another.");
-                return;
-            }
+    // Retrieve users from localStorage
+    let users = JSON.parse(localStorage.getItem('users')) || []; // Initialize to empty array if null
+    console.log(users); // Debugging statement
 
-            users.push({ username, password, gender });
-            localStorage.setItem('users', JSON.stringify(users));
+    if (users.some(user => user.username === username)) {
+        alert("Username already exists! Please choose another.");
+        return;
+    }
 
-            localStorage.setItem('currentUser', username); // Track the logged-in user
-            window.location.replace('account.html');
-        }
+    users.push({ username, password, gender });
+    localStorage.setItem('users', JSON.stringify(users));
+
+    localStorage.setItem('currentUser', username); // Track the logged-in user
+    window.location.replace('account.html');
+}
