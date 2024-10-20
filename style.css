@@ -1,0 +1,73 @@
+            body {
+                margin: 0px;
+            }
+            #help-bar {
+                border: 1px solid black;
+                border-top: 0px;
+                border-left: 0px;
+                border-bottom: 0px;
+                display: block;
+                padding: 8px;
+                text-align: left;
+                align-items: normal;
+                background-color: rgb(246, 245, 245);
+                position: relative;
+            }
+            .create-account {
+                background-color: green;
+                border-radius: 4px;
+                border: 1px solid grey;
+                color: white;
+                padding: 5px;
+                box-shadow: 0px 0px 0px 0px black;
+            }
+            .create-account:hover {
+                box-shadow: 0px 0px 12px 0px black;
+                cursor: pointer;
+            }
+            #page {
+                display: flex;
+            }
+            #get-started-notes {
+                margin-left: 1rem;
+                background-color: rgb(246, 245, 245);
+            }
+            #note-sections {
+                border: 1px solid black;
+                border-top: 0px;
+                border-right: 0px;
+                border-bottom: 0px;
+                padding: 5px;
+            }
+            #header {
+                border: 1px solid black;
+                display: flex;
+                padding: 12px; 
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+                background-color: rgb(236, 245, 247);
+            }
+            p {
+                margin-right: 30px;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            footer {
+                background-color: black;
+                color: white;
+                padding: 12px;
+                text-align: center;
+                bottom: 0px;
+                position: relative;
+                width: 98.45%;
+            }
+            marquee {
+                border-bottom: 1px solid black;
+                background: linear-gradient(gold, yellow);
+            }
