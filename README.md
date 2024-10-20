@@ -12,3 +12,4 @@ A notification will pop-up when you click the DONE button. It will ask:
 
 ![image](https://github.com/user-attachments/assets/d5f0083e-a0c1-4b76-abcd-1ecbd00f4778)
 <br><sup>This example shows what happens when you click the DONE button.</sup>
+<p>Also remember to check the projects tab to see updates.</p>
