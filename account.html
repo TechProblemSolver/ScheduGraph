@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Account - ScheduGraph</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add basic styles for notes and schedule section */
+        #notesSection, #scheduleSection {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .note, .schedule {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .remove-btn {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .remove-btn:hover {
+            background-color: #ff6b6b;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -15,6 +50,20 @@
     <div id="content">
         <h2>Your Dashboard</h2>
         <p>Here you can manage your tasks and notes.</p>
+
+        <div id="notesSection">
+            <h2>Notes</h2>
+            <input type="text" id="noteInput" placeholder="Add a new note..." />
+            <button onclick="addNote()">Add Note</button>
+            <div id="notesList"></div>
+        </div>
+
+        <div id="scheduleSection">
+            <h2>Schedules</h2>
+            <input type="text" id="scheduleInput" placeholder="Add a new schedule..." />
+            <button onclick="addSchedule()">Add Schedule</button>
+            <div id="scheduleList"></div>
+        </div>
     </div>
 
     <footer>
@@ -29,14 +78,86 @@
 
         if (!user) {
             alert("User not found! Redirecting to login.");
-            window.location.replace('index.html');
+            window.location.replace('project.html');
         } else {
             document.getElementById('usernameDisplay').innerText = user.username;
+            loadNotes();
+            loadSchedules();
         }
 
         function logout() {
             localStorage.removeItem('currentUser');
-            window.location.replace('index.html');
+            window.location.replace('project.html');
+        }
+
+        function loadNotes() {
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            const notesList = document.getElementById('notesList');
+            notesList.innerHTML = '';
+            notes.forEach((note, index) => {
+                notesList.innerHTML += `
+                    <div class="note">
+                        <span>${note}</span>
+                        <button class="remove-btn" onclick="removeNote(${index})">Remove</button>
+                    </div>
+                `;
+            });
+        }
+
+        function addNote() {
+            const noteInput = document.getElementById('noteInput');
+            const note = noteInput.value.trim();
+            if (!note) {
+                alert("Please enter a note.");
+                return;
+            }
+            let notes = JSON.parse(localStorage.getItem('notes')) || [];
+            notes.push(note);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            noteInput.value = '';
+            loadNotes();
+        }
+
+        function removeNote(index) {
+            let notes = JSON.parse(localStorage.getItem('notes')) || [];
+            notes.splice(index, 1);
+            localStorage.setItem('notes', JSON.stringify(notes));
+            loadNotes();
+        }
+
+        function loadSchedules() {
+            const schedules = JSON.parse(localStorage.getItem('schedules')) || [];
+            const scheduleList = document.getElementById('scheduleList');
+            scheduleList.innerHTML = '';
+            schedules.forEach((schedule, index) => {
+                scheduleList.innerHTML += `
+                    <div class="schedule">
+                        <span>${schedule}</span>
+                        <button class="remove-btn" onclick="removeSchedule(${index})">Remove</button>
+                    </div>
+                `;
+            });
+        }
+
+        function addSchedule() {
+            const scheduleInput = document.getElementById('scheduleInput');
+            const schedule = scheduleInput.value.trim();
+            if (!schedule) {
+                alert("Please enter a schedule.");
+                return;
+            }
+            let schedules = JSON.parse(localStorage.getItem('schedules')) || [];
+            schedules.push(schedule);
+            localStorage.setItem('schedules', JSON.stringify(schedules));
+            scheduleInput.value = '';
+            loadSchedules();
+        }
+
+        function removeSchedule(index) {
+            let schedules = JSON.parse(localStorage.getItem('schedules')) || [];
+            schedules.splice(index, 1);
+            localStorage.setItem('schedules', JSON.stringify(schedules));
+            loadSchedules();
         }
     </script>
 </body>
