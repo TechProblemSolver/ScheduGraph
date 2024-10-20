@@ -20,6 +20,29 @@
                     </p>
                 </div>
             `;
+            document.getElementById('loginForm').style.display = 'none'; // Hide login form
+        }
+
+        function showLoginForm() {
+            let loginForm = document.getElementById('loginForm');
+            loginForm.innerHTML = `
+                <div style="position: relative;">
+                    <p>* Username:
+                        <label for="loginUsername"></label>
+                        <input type='text' id='loginUsername' placeholder='Enter Name:' size='40'>
+                    </p>
+                    <p>* Password:
+                        <label for="loginPassword"></label>
+                        <input type='password' id='loginPassword'>
+                        <button aria-label="Toggle password visibility" onclick="showHideLogin()">👁️</button>
+                    </p>
+                    <p>
+                        <button onclick="login()">Login</button>
+                    </p>
+                </div>
+            `;
+            document.getElementById('accountForm').style.display = 'none'; // Hide account form
+            loginForm.style.display = 'block'; // Show login form
         }
 
         function showHide() {
@@ -27,28 +50,50 @@
             password.type = password.type === "password" ? "text" : "password";
         }
 
+        function showHideLogin() {
+            let password = document.getElementById('loginPassword');
+            password.type = password.type === "password" ? "text" : "password";
+        }
+
         function registerAccount() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const gender = document.querySelector('input[name="gender"]:checked')?.value;
 
-    if (!username || !password || !gender) {
-        alert("Please fill all required fields.");
-        return;
-    }
+            if (!username || !password || !gender) {
+                alert("Please fill all required fields.");
+                return;
+            }
 
-    // Retrieve users from localStorage
-    let users = JSON.parse(localStorage.getItem('users')) || []; // Initialize to empty array if null
-    console.log(users); // Debugging statement
+            // Retrieve users from localStorage
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.some(user => user.username === username)) {
+                alert("Username already exists. Please choose a different username.");
+                return;
+            }
 
-    if (users.some(user => user.username === username)) {
-        alert("Username already exists! Please choose another.");
-        return;
-    }
+            // Create a new user object
+            const newUser = { username, password, gender };
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Account created successfully! You can now log in.");
+            document.getElementById('accountForm').innerHTML = ""; // Clear the form
+        }
 
-    users.push({ username, password, gender });
-    localStorage.setItem('users', JSON.stringify(users));
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
 
-    localStorage.setItem('currentUser', username); // Track the logged-in user
-    window.location.replace('account.html');
-}
+            // Retrieve users from localStorage
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                // Successfully logged in, store currentUser in localStorage
+                localStorage.setItem('currentUser', username);
+                alert("Login successful! Redirecting to your account.");
+                window.location.replace('account.html'); // Redirect to account page
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
