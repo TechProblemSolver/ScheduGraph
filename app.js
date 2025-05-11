@@ -191,6 +191,11 @@ function removenote(index) {
 
     localStorage.setItem('noteCount', notes.length);
 
+    let currentNoteAmount = parseInt(localStorage.getItem('noteAmount')) || 0; 
+
+    currentNoteAmount -= 1 * 1000
+    localStorage.setItem('noteAmount', currentNoteAmount);
+
     loadNotes();
 }
 
@@ -241,6 +246,11 @@ function removeschedule(index) {
 
     localStorage.setItem('scheduleCount', schedules.length);
 
+    let currentScheduleAmount = parseInt(localStorage.getItem('schedule')) || 0;
+
+    currentScheduleAmount -= 1 * 1000;
+    localStorage.setItem('schedules', currentScheduleAmount);
+
     loadSchedules();
 }
 
@@ -248,10 +258,10 @@ function addSchedule() {
     let schedule = document.getElementById('schedule').value;
     localStorage.setItem('schedule', schedule);
 
-    let currentScheduleAmount = parseInt(localStorage.getItem('scheduleAmount')) || 0;
+    let currentScheduleAmount = parseInt(localStorage.getItem('schedule')) || 0;
 
     currentScheduleAmount += 1 * 1000;
-    localStorage.setItem('scheduleAmount', currentScheduleAmount);
+    localStorage.setItem('schedules', currentScheduleAmount);
 
     sendSchedule();
     loadSchedules();
