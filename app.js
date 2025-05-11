@@ -74,7 +74,7 @@ function hideANS3() {
 
 function showANS4() {
     let ans = document.getElementById('ans4');
-    ans.innerHTML = '<hr><img src="./Screenshot 2024-10-26 182813.png" width="250" height="99"><p>To add a comment, you must have a ScheduGraph account and go to a place that says comments in a header. You will not be able to see which user wrote what for privacy. Inappropriate words are not allowed. You can report a comment if it has inappropriate words.</p>';
+    ans.innerHTML = '<hr><p>Comments have not been added yet. Keep checking to see!</p>';
 }
 
 function hideANS4() {
