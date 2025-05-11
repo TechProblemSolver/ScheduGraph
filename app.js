@@ -206,3 +206,53 @@ function addNote() {
     sendNote();
     loadNotes();
 }
+
+function sendSchedule() {
+    let schedules = [];
+    let schedulesFromLocalStorage = localStorage.getItem('schedules');
+
+    if (schedulesFromLocalStorage) {
+        try {
+            schedules = JSON.parse(schedulesFromLocalStorage);
+        } catch (error) {
+            console.error('Error parsing schedules from localStorage:', error);
+        }
+    }
+    let newSchedule = {
+        user: localStorage.getItem('user'),
+        content: localStorage.getItem('schedule')
+    };
+    schedules.push(newSchedule);
+    localStorage.setItem('schedules', JSON.stringify(schedules));
+
+    let scheduleCount = schedules.length;
+    localStorage.setItem('scheduleCount', scheduleCount);
+
+    let scheduleList = schedules.map(schedule => `<h1 style="text-align: center; display: grid;">By: ${schedule.user}</h1><p><label>Schedule: </label>${schedule.content}<button onclick="removeschedule()">Delete</button></p><hr><br>`).join('');
+    localStorage.setItem('scheduleList', scheduleList);
+}
+
+function removeschedule(index) {
+    let schedules = JSON.parse(localStorage.getItem('schedules')) || [];
+
+    schedules.splice(index, 1);
+
+    localStorage.setItem('schedules', JSON.stringify(schedules));
+
+    localStorage.setItem('scheduleCount', schedules.length);
+
+    loadSchedules();
+}
+
+function addSchedule() {
+    let schedule = document.getElementById('schedule').value;
+    localStorage.setItem('schedule', schedule);
+
+    let currentScheduleAmount = parseInt(localStorage.getItem('scheduleAmount')) || 0;
+
+    currentScheduleAmount += 1 * 1000;
+    localStorage.setItem('scheduleAmount', currentScheduleAmount);
+
+    sendSchedule();
+    loadSchedules();
+}
