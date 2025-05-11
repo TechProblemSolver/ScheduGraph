@@ -173,7 +173,7 @@ function sendNote() {
     localStorage.setItem('noteCount', noteCount);
 
     // Format and set the note list for display
-    let noteList = notes.map(note => `<h1>By: ${note.user}</h1><p><label>Note: </label>${note.content}</p><hr><br>`).join('');
+    let noteList = notes.map(note => `<h1 style="text-align: center; display: grid;">By: ${note.user}</h1><p><label>Note: </label>${note.content}</p><hr><br>`).join('');
     localStorage.setItem('noteList', noteList);
 }
 
