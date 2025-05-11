@@ -1,0 +1,186 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    background-color: white;
+    margin: 0px;
+}
+.both_sides, #dashboard {
+    display: flex;
+    margin: 0px;
+}
+#askedQS1, #askedQS2, #askedQS3, #askedQS4, #askedQS5 {
+    background-color: rgb(204, 238, 249);
+    border-radius: 4px;
+    margin: 7px;
+    border: 1px solid black;
+    animation: forwards;
+    animation-delay: 20ms;
+    -moz-animation-delay: 25ms;
+    width: 400px;
+}
+#askedQS1:hover, #askedQS2:hover, #askedQS3:hover, #askedQS4:hover, #askedQS5:hover {
+    box-shadow: 0px 0px 11px black;
+    cursor: pointer;
+    background-color: lightcyan;
+}
+.themes {
+    background-color: rgb(144, 140, 140);
+    padding: 4px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 6px;
+    float: right;
+    margin-right: 12px;
+    margin-left: 5px;
+}
+#signLog {
+    border: 1px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    margin: 5px;
+    margin-top: 0px;
+    padding: 12px;
+}
+#usefulness {
+    border: 1px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    margin: 5px;
+    margin-top: 0px;
+    padding: 12px;
+    display: grid;
+}
+header {
+    border: 1px solid black;
+    color: black;
+    padding: 18px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: rgb(248, 248, 248);
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+.create {
+    background-color: yellow;
+    color: white;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+.create:hover {
+    background-color: lightyellow;
+    color: black;
+    box-shadow: 0px 0px 5px black;
+}
+.link {
+    margin-right: 50px;
+}
+.makeAccount {
+    float: right;
+}
+.info {
+    background-color: lightskyblue;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#realInfo {
+    background-color: lightskyblue;
+    padding: 5px;
+    border: 1px solid black;
+    border-left: 0px;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.themes:hover {
+    box-shadow: 0px 0px 5px black;
+}
+button {
+    cursor: pointer;
+}
+#form {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 12px;
+    padding: 8px;
+    margin: 8px;
+}
+#intro {
+    border-bottom: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+input {
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0px 0px 5px black;
+}
+#sendComment, #checkUsername {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: 0px 0px 5px black;
+    background: radial-gradient( white, lightskyblue);
+}
+#sendComment:hover, #checkUsername:hover {
+    background: radial-gradient(white, lightcyan);
+}
+#usernameCheck, #checkUsername {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#comments {
+    margin: 5px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+span {
+    margin-right: 12px;
+}
+#notes {
+    padding: 20px;
+    border: 1px solid black;
+    margin-top: 10%;
+    background-color: rgb(194, 227, 248);
+    border-radius: 4px;
+    color: black;
+}
+#schedules {
+    color: black;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: rgb(194, 227, 248);
+    border-top: 0px;
+}
+#linkSideBar {
+    margin-top: 3.9232%;
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+}
+.links:hover {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0px 0px 5px black;
+    cursor: pointer;
+}

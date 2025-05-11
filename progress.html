@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScheduGraph - Account Notes</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body onload="loadProgress()" id="body">
+    <header style="border-bottom: 1px solid; border-bottom-color: black;">
+        <span id="themes" class="themes"><button style="background-color:rgb(144, 140, 140); border: 0px;" id="theme" onclick="changeThemes()" class="theme" title="Change Theme">🌙</button></span>
+        <span style="float: left; margin-right: 12px;"><b style="font-size: 1.0rem;"><span id="welcomeUser"></span></b></span>
+        <span style="margin-left: 80%; background-color: red; padding: 5px; border: 1px solid black; border-radius: 8px;"><button onclick="logOut()" style="background-color: red; padding: 5px; border: 0px solid black;">Delete Account</button></span>
+    </header>
+    <div id="dashboard">
+        <div id="linkSideBar">
+            <p><svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-three-bars Button-visual">
+                <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path>
+            </svg></p>
+            <p title="Home" class="links"><a href="./account.html">🏠</a></p>
+            <p title="Notes" class="links" id="noteLink"><a href="./notes.html">📓</a></p>
+            <p title="Schedules" class="links"><a href="./schedules.html">⏰</a></p>
+            <p title="See Progress" class="links"><a href="progress.html">📊</a></p>
+            <p title="Settings" class="links">⚙️</p>
+        </div>
+        <div style="margin-top: 10%; border: 1px solid black; border-radius: 4px; margin-left: 30%;">
+            <canvas width="700" height="500" id="canvas"></canvas>
+            
+            <p><span style="margin-left: 23%;">Notes</span> <span style="margin-left: 30px;">Schedules</span> <span style="margin-left: 30px;">Finished</span> <span style="margin-left: 30px;">Deleted</span></p>
+        </div>
+        <script src="src.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

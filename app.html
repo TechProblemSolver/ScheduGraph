@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScheduGraph</title>
+    <link rel="shortcut icon" href="1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="app.css">
+    <script src="./app.js"></script>
+</head>
+<body id="body" onload="getUser()">
+    <header>
+        <span class="link"><img src="1.jpg" width="50" height="50" style="border-radius: 50%;"></span>
+        <span class="link">Home</span>
+        <span class="link">Services</span>
+        <a href="account.html"><span class="link" id="account"></span></a>
+        <span id="themes" class="themes"><button style="background-color:rgb(144, 140, 140); border: 0px;" id="theme" onclick="changeTheme()" class="theme" title="Change Theme">🌙</button></span>
+        <span class="makeAccount"><button title="Create Account" class="create" onmouseenter="showMeaning1()" onmouseleave="hideMeaning1()" onclick="createAccount()">➕<span id="label"></span></button></span>
+        <span class="themes"><button id="contribute" class="theme" onclick="//contribute()" title="Contribute to Upgrade ScheduGraph" style="background-color:rgb(144, 140, 140); border: 0px;">📓</button></span>
+    </header>
+    <div id="intro">
+        <br>
+        <br>
+        <img src="schedubar.webp" width="500" height="500">
+        <div style="margin-top: 8%; margin-left: 12px;">
+            <h1>A world where you need your privacy and events</h1>
+            <p>
+                In ScheduGraph, you can save everything you need, make notes, keep track of events, keep track of things, add due dates and even see what you have accomplished over time. You will see how many notes you have, how many schedules, and also how many schedules are done. With all this, you don't need to worry about forgetting an event or even losing your password. This is a place built for everyone. Why not make an account for FREE today?
+            </p>
+        </div>
+    </div>
+    <div class="both_sides">
+        <div id="signLog">
+            <br>
+            <br>
+            <br>
+            <br>
+            <center>
+                <a href="#https://www.youtube.com/@ScheduGraph" target="_top"><img src="DALL·E 2024-10-26 15.27.46 - A logo design featuring the text 'ScheduGraph!' clearly and accurately. The word is stylized with a sleek, modern font, with 'Schedu' and 'Graph' comb.webp" width="200" height="200" style="border-radius: 50%;"></a>
+            </center>
+            <h2>Create an account and start tracking schedules.</h2>
+            <p>Make an account today for FREE!</p>
+            <div id="form"></div>
+        </div>
+        <div id="usefulness">
+            <br><br><br><br><br>
+            <h1>Questions</h1>
+            <button id="askedQS1" onclick="showANS1()" ondblclick="hideANS1()">
+                <h3>What's ScheduGraph?</h3>
+                <div id="ans1"></div>
+            </button>
+            <button id="askedQS2" onclick="showANS2()" ondblclick="hideANS2()">
+                <h3>How do you make an account?</h3>
+                <div id="ans2"></div>
+            </button>
+            <button id="askedQS3" onclick="showANS3()" ondblclick="hideANS3()">
+                <h3>How do I change themes?</h3>
+                <div id="ans3"></div>
+            </button>
+            <button id="askedQS4" onclick="showANS4()" ondblclick="hideANS4()">
+                <h3>How do I add a comment?</h3>
+                <div id="ans4"></div>
+            </button>
+            <button id="askedQS5" onclick="showANS5()" ondblclick="hideANS5()">
+                <h3>How can I contribute to make ScheduGraph better?</h3>
+                <div id="ans5"></div>
+            </button>
+            <sub style="margin-top: 12px; color: black;"><span class="info" style="margin-right: 0px;">ℹ️</span><span id="realInfo">Info: Double Click a question to close it.</span></sub>
+            <br>
+        </div>
+        <div id="comments">
+            <br>
+            <h3>Comments</h3>
+            <sub>Write Your Account Username to send your comment.</sub><br><br>
+            <label>Write Username: </label><input type="text" id="usernameCheck">
+            <hr>
+            <div>Add a comment.</div>
+            <input type="text" id="comment" name="comment" placeholder="Write a comment here"><button id="sendComment">Send</button>
+            <hr>
+            <h2>All Comments</h2>
+            <hr>
+            <div id="allComments"></div>
+        </div>
+    </div>
+    <footer style="background-color: black; color: white; padding: 5px;"> &copy; ScheduGraph. All rights reserved. &reg;
+        <hr>
+    </footer>
+</body>
+</html>
