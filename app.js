@@ -5,7 +5,7 @@ function loadNotes() {
     if (noteListElement) {
         noteListElement.innerHTML = '';
         notes.forEach((note, index) => {
-            noteListElement.innerHTML += `<h1 style="text-align: center; display: grid;">By: ${note.user}</h1><p><label>Note: </label>${note.content}<button onclick="removenote(${index})">Delete</button></p><hr><br>`;
+            noteListElement.innerHTML += `<div style="border-bottom: 1px solid black;"><h1 style="text-align: center; display: grid;">By: ${note.user}</h1><p><label>Note: </label>${note.content}<button onclick="removenote(${index})">Delete</button></p><hr></div><br>`;
         });
     } else {
         console.error("noteList element not found");
