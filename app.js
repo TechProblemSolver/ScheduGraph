@@ -193,7 +193,7 @@ function removenote(index) {
 
     let currentNoteAmount = parseInt(localStorage.getItem('noteAmount')) || 0; 
 
-    currentNoteAmount -= 1 * 1000
+    currentNoteAmount = currentNoteAmount - (1 * 1000)
     localStorage.setItem('noteAmount', currentNoteAmount);
 
     sendNote()
