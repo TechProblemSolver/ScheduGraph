@@ -6,7 +6,7 @@ function loadProgress() {
     c.clearRect(0, 0, canvas.width, canvas.height);
 
     // Get the lengths of each data item, parsing as needed
-    let notesLength = localStorage.getItem('noteAmount') ? JSON.parse(localStorage.getItem('noteAmount')).length : 0;
+    let notesLength = localStorage.getItem('noteAmount');
     let schedulesLength = localStorage.getItem('schedules') ? JSON.parse(localStorage.getItem('schedules')).length : 0;
     let finishedLength = localStorage.getItem('finished') ? JSON.parse(localStorage.getItem('finished')).length : 0;
     let deletedLength = localStorage.getItem('deleted') ? JSON.parse(localStorage.getItem('deleted')).length : 0;
