@@ -196,6 +196,7 @@ function removenote(index) {
     currentNoteAmount -= 1 * 1000
     localStorage.setItem('noteAmount', currentNoteAmount);
 
+    sendNote()
     loadNotes();
 }
 
@@ -251,6 +252,7 @@ function removeschedule(index) {
     currentScheduleAmount -= 1 * 1000;
     localStorage.setItem('schedules', currentScheduleAmount);
 
+    sendSchedule();
     loadSchedules();
 }
 
