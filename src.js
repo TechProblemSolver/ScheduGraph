@@ -17,10 +17,4 @@ function loadProgress() {
     
     c.fillStyle = 'green'; // Set color for schedules
     c.fillRect(250, 496, 55, schedulesLength);
-    
-    c.fillStyle = 'orange'; // Set color for finished tasks
-    c.fillRect(350, 496, 55, finishedLength);
-    
-    c.fillStyle = 'red'; // Set color for deleted tasks
-    c.fillRect(450, 496, 55, deletedLength);
 }
